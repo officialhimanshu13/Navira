@@ -1,8 +1,82 @@
-cat > .gitignore <<'EOF'
-node_modules/
-dist/
+# ====================================================================
+# NAVIRA — Git Ignore Configuration
+# Protects sensitive keys, environment files, build artifacts & logs
+# ====================================================================
+
+# 1. Environment Variables & Secret Credentials (STRICTLY PRIVATE)
 .env
-.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+*.env
+!*.env.example
 !.env.example
+
+# Private API keys, certificates & service accounts
+*.pem
+*.key
+*.cert
+*.p12
+*.pfx
+serviceAccountKey.json
+firebase-admin.json
+credentials.json
+token.json
+
+# 2. Dependencies
+node_modules/
+jspm_packages/
+web_modules/
+
+# 3. Production Builds & Bundler Caches
+dist/
+dist-ssr/
+build/
+out/
+.vite/
+.cache/
+*.tsbuildinfo
+
+# 4. Logs, Runtime & Debugging
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 5. Local Database, Backups & Scratch Files
+backup_sitesaathi/
+scratch/
+tmp/
+temp/
+*.bak
+*.backup
+*.tmp
+
+# 6. Operating System Artifacts
 .DS_Store
-EOF
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# 7. IDE & Editor Workspaces
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# 8. Test Coverage & Reports
+coverage/
+.nyc_output/
