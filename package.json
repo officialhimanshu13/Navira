@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "node server/server.js",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "npx -y tsx test/verify_app.test.ts"
+    "test": "jiti test/verify_app.test.ts"
   },
   "dependencies": {
     "lucide-react": "^0.439.0",
